@@ -1,10 +1,10 @@
 <template>
   <q-tabs
-      v-model="tab"
-      narrow-indicator
-      dense
-      align="justify"
-      class="tabs text-secondary bg-grey-3"
+    v-model="tab"
+    narrow-indicator
+    dense
+    align="justify"
+    class="tabs text-secondary bg-grey-3"
   >
     <q-tab :ripple="{ color: 'orange' }" name="mails" label="Mails" />
     <q-tab :ripple="{ color: 'orange' }" name="alarms" label="Alarms" />
@@ -13,9 +13,10 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
+import { ref } from "vue";
+var a = 1;
 
-const tab = ref('mails')
+const tab = ref("mails");
 </script>
 
 <style lang="scss" scoped>
