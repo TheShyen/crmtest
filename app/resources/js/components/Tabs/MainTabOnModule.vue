@@ -6,7 +6,18 @@
     class="bg-white shadow-2 q-mb-md q-pa-xs rounded-borders"
   >
     <div v-for="tab in tabs">
-      <q-tab v-if="tab.type === 'tab'" :name="tab.text" :label="tab.text" />
+      <router-link
+        :to="tab.route"
+        :color="'white'"
+        style="text-decoration: none"
+      >
+        <q-tab
+          v-if="tab.type === 'tab'"
+          :name="tab.text"
+          :label="tab.text"
+        ></q-tab>
+      </router-link>
+
       <q-btn-dropdown
         v-if="tab.type === 'select'"
         auto-close
@@ -35,9 +46,15 @@ const tab = ref("mails");
 const props = defineProps({
   tabs: Array,
 });
-/* Пример tabs [
-  { text: "Структура компании", route: "/", id: 1, type: "tab" },
-  { text: "Сотрудники", route: "/", id: 2, type: "tab" },
+/*
+[
+  {
+    text: "Структура компании",
+    route: "/company/structure",
+    id: 1,
+    type: "tab",
+  },
+  { text: "Сотрудники", route: "/company/users", id: 2, type: "tab" },
   {
     text: "Время и отчёты",
     route: "/",
@@ -61,7 +78,8 @@ const props = defineProps({
       },
     ],
   },
-]; */
+];
+*/
 </script>
 
 <style lang="scss" scoped></style>

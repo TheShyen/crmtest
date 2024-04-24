@@ -40,7 +40,7 @@
       </q-item>
 
       <q-item clickable v-ripple>
-        <router-link to="/company/structure">
+        <router-link to="/company">
           <q-item-section avatar>
             <q-icon name="drafts" />
           </q-item-section>
