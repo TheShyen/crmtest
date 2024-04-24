@@ -1,43 +1,9 @@
 <template>
   <q-drawer show-if-above :model-value="isSidebarOpen" width="250" side="left" behavior="desktop">
     <q-list padding class="menu-list">
-      <q-item clickable v-ripple>
-        <q-item-section avatar>
-          <q-icon name="inbox" />
-        </q-item-section>
-
+      <q-item clickable v-ripple v-for="link in routes">
         <q-item-section>
-          Inbox
-        </q-item-section>
-      </q-item>
-
-      <q-item active clickable v-ripple>
-        <q-item-section avatar>
-          <q-icon name="star" />
-        </q-item-section>
-
-        <q-item-section>
-          Star
-        </q-item-section>
-      </q-item>
-
-      <q-item clickable v-ripple>
-        <q-item-section avatar>
-          <q-icon name="send" />
-        </q-item-section>
-
-        <q-item-section>
-          Send
-        </q-item-section>
-      </q-item>
-
-      <q-item clickable v-ripple>
-        <q-item-section avatar>
-          <q-icon name="drafts" />
-        </q-item-section>
-
-        <q-item-section>
-          Drafts
+          {{link.name}}
         </q-item-section>
       </q-item>
     </q-list>
@@ -49,6 +15,21 @@ const props = defineProps({
   isSidebarOpen: Boolean
 })
 
+const routes = [
+  {
+    name: 'CRM',
+    route: '/crm'
+  },
+  {
+    name: 'Задачи и проекты',
+    route: '/crm'
+  },
+  {
+    name: 'Структура компании',
+    route: '/crm'
+  },
+
+]
 </script>
 
 <style lang="scss" scoped>
