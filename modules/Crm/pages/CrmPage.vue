@@ -14,10 +14,10 @@
 
 
 
-import ViewTypeTabs from "@/components/Tabs/ViewTypeTabs.vue";
-import MainTabOnModule from "@/components/Tabs/MainTabOnModule.vue";
-import CreateButtons from "@/components/Buttons/CreateButtons.vue";
-import SearchTagTabs from "@/components/Tabs/SearchTagTabs.vue";
+import ViewTypeTabs from "@/components/Tabs/viewTypeTabs.vue";
+import MainTabOnModule from "@/components/Tabs/mainTabOnModule.vue";
+import CreateButtons from "@/components/Buttons/createButtons.vue";
+import SearchTagTabs from "@/components/Tabs/searchTagTabs.vue";
 </script>
 
 <style lang="scss" scoped>
