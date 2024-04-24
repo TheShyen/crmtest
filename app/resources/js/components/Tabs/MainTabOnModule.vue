@@ -5,17 +5,34 @@
     align="left"
     class="bg-white shadow-2 q-mb-md q-pa-xs rounded-borders"
   >
-    <div v-for="tab in tabs" :key="tab.id">
-      <q-tab v-if="tab.type === 'tab'" :name="tab.text" :label="tab.text" />
-      <q-btn-dropdown v-else auto-close stretch flat :label="tab.text">
+    <div v-for="tab in tabs">
+      <router-link
+        :to="tab.route"
+        :color="'white'"
+        style="text-decoration: none"
+      >
+        <q-tab
+          v-if="tab.type === 'tab'"
+          :name="tab.text"
+          :label="tab.text"
+        ></q-tab>
+      </router-link>
+
+      <q-btn-dropdown
+        v-if="tab.type === 'select'"
+        auto-close
+        stretch
+        flat
+        :label="tab.text"
+      >
         <q-list>
           <q-item
-            v-for="option in tab.selectItems"
+            v-for="selectItems in tab.options"
             clickable
             @click="tab = 'movies'"
           >
-            <q-item-section>{{ option.text }}</q-item-section></q-item
-          >
+            <q-item-section>{{ selectItems.text }}</q-item-section>
+          </q-item>
         </q-list>
       </q-btn-dropdown>
     </div>
@@ -27,21 +44,42 @@ import { ref, defineProps } from "vue";
 
 const tab = ref("mails");
 const props = defineProps({
-  tabs: Array /* Передаём в виде [
-  { text: "Структура компании", type: "tab", route: "/", id: 1 },
-  { text: "Сотрудники", type: "tab", route: "/", id: 2 },
+  tabs: Array,
+});
+/*
+[
+  {
+    text: "Структура компании",
+    route: "/company/structure",
+    id: 1,
+    type: "tab",
+  },
+  { text: "Сотрудники", route: "/company/users", id: 2, type: "tab" },
   {
     text: "Время и отчёты",
-    type: "btn-dropdown",
+    route: "/",
     id: 3,
-    selectItems: [
-      { text: "Собрания и планерки", route: "/", id: 1 },
-      { text: "График отсутствий", route: "/", id: 2 },
-      { text: "История входов", route: "/", id: 3 },
+    type: "select",
+    options: [
+      {
+        text: "Собрания и планерки",
+        id: 1,
+        route: "/",
+      },
+      {
+        text: "График отсутствий",
+        id: 2,
+        route: "/",
+      },
+      {
+        text: "История входов",
+        id: 3,
+        route: "/",
+      },
     ],
   },
-]; */,
-});
+];
+*/
 </script>
 
 <style lang="scss" scoped></style>
