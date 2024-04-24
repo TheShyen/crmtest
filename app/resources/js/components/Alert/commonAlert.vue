@@ -5,7 +5,6 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
 const props = defineProps({
   text: Array, // Текст сообщения. Передаётся как ['текст']
   color: String, // Цвет фона.

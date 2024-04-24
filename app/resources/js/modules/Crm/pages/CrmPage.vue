@@ -18,7 +18,7 @@
 
 
 import ViewTypeTabs from "@/components/Tabs/viewTypeTabs.vue";
-import MainTabOnModule from "@/components/Tabs/mainTabOnModule.vue";
+import MainTabOnModule from "@/components/Tabs/MainTabOnModule.vue";
 import CreateButtons from "@/components/Buttons/createButtons.vue";
 import SearchTagTabs from "@/components/Tabs/searchTagTabs.vue";
 import EntityCard from "@/modules/Crm/components/entityCard.vue";

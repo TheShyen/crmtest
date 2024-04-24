@@ -1,35 +1,31 @@
 <template>
   <q-tabs
-    v-model="tab"
-    inline-label
-    align="left"
-    class="bg-white shadow-2 q-mb-md q-pa-xs rounded-borders"
+      v-model="tab"
+      inline-label
+      align="left"
+      class="bg-white shadow-2 q-mb-md q-pa-xs rounded-borders"
   >
     <div v-for="tab in tabs">
-      <router-link
-        :to="tab.route"
-        :color="'white'"
-        style="text-decoration: none"
-      >
-        <q-tab
+      <q-route-tab
+          :to="tab.route"
           v-if="tab.type === 'tab'"
           :name="tab.text"
           :label="tab.text"
-        ></q-tab>
-      </router-link>
+      >
+      </q-route-tab>
 
       <q-btn-dropdown
-        v-if="tab.type === 'select'"
-        auto-close
-        stretch
-        flat
-        :label="tab.text"
+          v-if="tab.type === 'select'"
+          auto-close
+          stretch
+          flat
+          :label="tab.text"
       >
         <q-list>
           <q-item
-            v-for="selectItems in tab.options"
-            clickable
-            @click="tab = 'movies'"
+              v-for="selectItems in tab.options"
+              clickable
+
           >
             <q-item-section>{{ selectItems.text }}</q-item-section>
           </q-item>
@@ -40,7 +36,7 @@
 </template>
 
 <script setup>
-import { ref, defineProps } from "vue";
+import {ref, defineProps} from "vue";
 
 const tab = ref("mails");
 const props = defineProps({
