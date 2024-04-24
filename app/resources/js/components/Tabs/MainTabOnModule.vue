@@ -1,33 +1,67 @@
 <template>
   <q-tabs
-      v-model="tab"
-      inline-label
-      align="left"
-      class="bg-white shadow-2 q-mb-md q-pa-xs rounded-borders"
+    v-model="tab"
+    inline-label
+    align="left"
+    class="bg-white shadow-2 q-mb-md q-pa-xs rounded-borders"
   >
-    <q-tab name="mails" label="Mails"/>
-    <q-tab name="alarms" label="Alarms"/>
-    <q-btn-dropdown auto-close stretch flat label="More...">
-      <q-list>
-        <q-item clickable @click="tab = 'movies'">
-          <q-item-section>Movies</q-item-section>
-        </q-item>
-
-        <q-item clickable @click="tab = 'photos'">
-          <q-item-section>Photos</q-item-section>
-        </q-item>
-      </q-list>
-    </q-btn-dropdown>
+    <div v-for="tab in tabs">
+      <q-tab v-if="tab.type === 'tab'" :name="tab.text" :label="tab.text" />
+      <q-btn-dropdown
+        v-if="tab.type === 'select'"
+        auto-close
+        stretch
+        flat
+        :label="tab.text"
+      >
+        <q-list>
+          <q-item
+            v-for="selectItems in tab.options"
+            clickable
+            @click="tab = 'movies'"
+          >
+            <q-item-section>{{ selectItems.text }}</q-item-section>
+          </q-item>
+        </q-list>
+      </q-btn-dropdown>
+    </div>
   </q-tabs>
-
 </template>
 
 <script setup>
-import {ref} from "vue";
+import { ref, defineProps } from "vue";
 
-const tab = ref('mails')
+const tab = ref("mails");
+const props = defineProps({
+  tabs: Array,
+});
+/* Пример tabs [
+  { text: "Структура компании", route: "/", id: 1, type: "tab" },
+  { text: "Сотрудники", route: "/", id: 2, type: "tab" },
+  {
+    text: "Время и отчёты",
+    route: "/",
+    id: 3,
+    type: "select",
+    options: [
+      {
+        text: "Собрания и планерки",
+        id: 1,
+        route: "/",
+      },
+      {
+        text: "График отсутствий",
+        id: 2,
+        route: "/",
+      },
+      {
+        text: "История входов",
+        id: 3,
+        route: "/",
+      },
+    ],
+  },
+]; */
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
