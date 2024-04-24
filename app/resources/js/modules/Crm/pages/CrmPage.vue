@@ -1,31 +1,19 @@
 <template>
   <div class="q-ma-md">
-    <MainTabOnModule/>
-    <CreateButtons/>
-    <q-separator/>
-    <div class="page-tabs">
-      <ViewTypeTabs/>
-      <SearchTagTabs/>
-    </div>
-    <div class="q-mt-md row items-start">
-      <EntityCard/>
-    </div>
+    <MainTabOnModule :tabs="crmTabs"/>
+    <CrmLayout>
+      <RouterView/>
+    </CrmLayout>
+
   </div>
 </template>
 
 <script setup>
-
-
-
-import ViewTypeTabs from "@/components/Tabs/viewTypeTabs.vue";
-import MainTabOnModule from "@/components/Tabs/MainTabOnModule.vue";
-import CreateButtons from "@/components/Buttons/createButtons.vue";
-import SearchTagTabs from "@/components/Tabs/searchTagTabs.vue";
-import EntityCard from "@/modules/Crm/components/entityCard.vue";
+import MainTabOnModule from "@/components/Tabs/mainTabOnModule.vue";
+import {crmTabs} from "../routes/crmTabs.js";
+import CrmLayout from "@/layouts/CrmLayout.vue";
 </script>
 
 <style lang="scss" scoped>
-.page-tabs {
-  display: flex;
-}
+
 </style>

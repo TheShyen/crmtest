@@ -25,7 +25,6 @@
           <q-item
               v-for="selectItems in tab.options"
               clickable
-
           >
             <q-item-section>{{ selectItems.text }}</q-item-section>
           </q-item>
@@ -36,46 +35,12 @@
 </template>
 
 <script setup>
-import {ref, defineProps} from "vue";
+import {ref} from "vue";
 
 const tab = ref("mails");
 const props = defineProps({
   tabs: Array,
 });
-/*
-[
-  {
-    text: "Структура компании",
-    route: "/company/structure",
-    id: 1,
-    type: "tab",
-  },
-  { text: "Сотрудники", route: "/company/users", id: 2, type: "tab" },
-  {
-    text: "Время и отчёты",
-    route: "/",
-    id: 3,
-    type: "select",
-    options: [
-      {
-        text: "Собрания и планерки",
-        id: 1,
-        route: "/",
-      },
-      {
-        text: "График отсутствий",
-        id: 2,
-        route: "/",
-      },
-      {
-        text: "История входов",
-        id: 3,
-        route: "/",
-      },
-    ],
-  },
-];
-*/
 </script>
 
 <style lang="scss" scoped></style>

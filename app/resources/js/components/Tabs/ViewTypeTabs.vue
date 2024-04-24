@@ -14,7 +14,6 @@
 
 <script setup>
 import { ref } from "vue";
-var a = 1;
 
 const tab = ref("mails");
 </script>
