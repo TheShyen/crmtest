@@ -28,7 +28,6 @@
 
 <script setup>
 
-import CommonCounter from "../../../components/Counter/commonCounter.vue";
 </script>
 
 <style lang="scss" scoped>

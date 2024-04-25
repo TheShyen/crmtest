@@ -8,18 +8,19 @@
         </q-avatar>
         Title
       </q-toolbar-title>
-      <FillialsButton>
+      <DropdownButton label="Филиалы" rounded dense no-caps flat>
         <FilialsList/>
-      </FillialsButton>
+      </DropdownButton>
       <CommonSearch/>
     </q-toolbar>
   </q-header>
 </template>
 
 <script setup>
-import FillialsButton from "@/components/Buttons/fillialsButton.vue";
+import FillialsButton from "@/components/Buttons/dropdownButton.vue";
 import FilialsList from "@/modules/Filials/components/FilialsList.vue";
 import CommonSearch from "@/components/Search/commonSearch.vue";
+import DropdownButton from "../Buttons/dropdownButton.vue";
 
 const emit = defineEmits(['toggleSidebar'])
 

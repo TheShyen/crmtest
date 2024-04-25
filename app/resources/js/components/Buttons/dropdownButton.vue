@@ -1,5 +1,5 @@
 <template>
-  <q-btn-dropdown push rounded dense no-caps flat label="Филиалы" icon="arrow">
+  <q-btn-dropdown icon="arrow">
     <slot/>
   </q-btn-dropdown>
 </template>
