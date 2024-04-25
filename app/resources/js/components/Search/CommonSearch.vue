@@ -1,5 +1,15 @@
 <template>
-  <q-input dark dense rounded standout v-model="text" placeholder="искать сотрудника, документ, прочее..." class="search">
+  <q-input
+    dark
+    dense
+    rounded
+    standout
+    :bg-color="bg"
+    :outlined="outlined"
+    v-model="text"
+    :placeholder="placeholder"
+    class="search"
+  >
     <template v-slot:append>
       <q-icon v-if="text === ''" name="search" />
       <q-icon v-else name="clear" class="cursor-pointer" @click="text = ''" />
@@ -8,9 +18,15 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
+import { ref, defineProps } from "vue";
 
-const text = ref('')
+const text = ref("");
+
+const props = defineProps({
+  placeholder: String,
+  bg: String, // фон
+  outlined: Boolean,
+});
 </script>
 
 <style lang="scss" scoped>

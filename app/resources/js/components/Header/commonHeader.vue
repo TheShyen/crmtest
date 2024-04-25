@@ -14,7 +14,7 @@
       <FillialsButton>
         <FilialsList />
       </FillialsButton>
-      <CommonSearch />
+      <CommonSearch :placeholder="'искать сотрудника, документ, прочее...'" />
     </q-toolbar>
   </q-header>
 </template>

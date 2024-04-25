@@ -1,35 +1,28 @@
 <template>
-  <div>Структура</div>
-  <Select @onSelectChange="change" :options="array"></Select>
+  <h6 class="q-my-sm">Структура компании</h6>
+  <q-layout container> <divisionCard></divisionCard></q-layout>
 
-  <Button @onButtonClick="ewq" :color="'secondary'">Привет</Button>
-
-  <Input
-    @onInputChange="g"
-    :width="'500px'"
-    :border="'2px solid #00BCD4'"
-  ></Input>
-
-  <Tooltip :show="'true'" :color="'black'" :bg="'red'">Привет!</Tooltip>
+  <label class="q-field row no-wrap items-start q-field--standard q-input">
+    <div class="q-field__inner relative-position col self-stretch">
+      <div class="q-field__control relative-position row no-wrap">
+        <div
+          class="q-field__control-container col relative-position row no-wrap q-anchor--skip items-center"
+        >
+          <Filter :ref="filter">Привет</Filter>
+          <Filter>Пока</Filter>
+          <input class="q-field__native q-placeholder" type="text" />
+        </div>
+      </div>
+    </div>
+  </label>
 </template>
 
 <script setup>
-import Select from "@/components/Select/select.vue";
-import Button from "@/components/Buttons/CommonButton.vue";
-import Input from "@/components/Input/input.vue";
-import Tooltip from "@/components/Tooltip/tooltip.vue";
+import { ref } from "vue";
 
-var ewq = (event) => {
-  console.log(event);
-};
+import Filter from "@/components/Filter/Filter.vue";
+import Search from "@/components/Search/CommonSearch.vue";
 
-var g = (event) => {
-  console.log(event);
-};
-
-var change = (event) => {
-  console.log(event);
-};
-
-const array = ["qwe", " asd", "zxc"];
+const modelMultiple = ref(["Google", "Facebook", "Twitter", "Apple", "Oracle"]);
+const options = ["Google", "Facebook", "Twitter", "Apple", "Oracle"];
 </script>

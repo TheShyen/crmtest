@@ -14,17 +14,17 @@ const companyTabs = [
     options: [
       {
         text: "Собрания и планерки",
-        id: 1,
+        id: 4,
         route: "/",
       },
       {
         text: "График отсутствий",
-        id: 2,
+        id: 5,
         route: "/",
       },
       {
         text: "История входов",
-        id: 3,
+        id: 6,
         route: "/",
       },
     ],

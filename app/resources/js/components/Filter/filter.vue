@@ -1,14 +1,17 @@
 <template>
-  <q-btn-group>
-    <q-btn :color="color" class="text-capitalize"><slot></slot> </q-btn>
-    <q-btn :color="color" class="text-lowercase">x</q-btn>
-  </q-btn-group>
+  <q-chip
+    removable
+    v-model="eclair"
+    @remove="log('Icecream')"
+    color="teal"
+    text-color="white"
+  >
+    <slot></slot>
+  </q-chip>
 </template>
 
 <script setup>
-import { defineProps } from "vue";
+import { ref } from "vue";
 
-const props = defineProps({
-  color: String,
-});
+const eclair = ref(true);
 </script>

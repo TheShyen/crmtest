@@ -4,6 +4,7 @@
     v-model="value"
     @update:model-value="$emit('onInputChange', $event, id)"
     :label="label"
+    :placeholder="placeholder"
   />
 </template>
 
@@ -14,5 +15,6 @@ const value = ref("");
 
 const props = defineProps({
   label: String, // название поля
+  placeholder: String,
 });
 </script>
