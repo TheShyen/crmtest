@@ -4,13 +4,16 @@
       <q-card-section class="card">
         <div class="card__title">dsdfsfsfsfsfsfssf</div>
         <div class="card__transaction-type">dsdfsfsfsfsfsfssf</div>
+        <div class="card__price">dsdfsfsfsfsfsfssf</div>
+        <div class="card__client">dsdfsfsfsfsfsfssf</div>
+        <div class="card__source">dsdfsfsfsfsfsfssf</div>
         <div class="card__owner">dsdfsfsfsfsfsfssf</div>
-        <div class="card__create-date">dsdfsfsfsfsfsfssf</div>
         <div class="card__status"></div>
         <div>dsdfsfsfsfsfsfsfdsf</div>
       </q-card-section>
 
       <q-card-actions vertical class="justify-start">
+        <q-badge rounded class="q-mx-xs" color="grey-6">2</q-badge>
         <q-btn size="xs" flat round color="blue" icon="call"/>
         <q-btn size="xs" flat round color="grey-5" icon="message"/>
         <q-btn size="xs" flat round color="grey-5" icon="share"/>
@@ -25,6 +28,7 @@
 
 <script setup>
 
+import CommonCounter from "../../../components/Counter/commonCounter.vue";
 </script>
 
 <style lang="scss" scoped>

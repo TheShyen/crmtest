@@ -22,6 +22,7 @@ import FilialsList from "@/modules/Filials/components/FilialsList.vue";
 import CommonSearch from "@/components/Search/commonSearch.vue";
 
 const emit = defineEmits(['toggleSidebar'])
+
 function toggleSidebar() {
   emit('toggleSidebar')
 }

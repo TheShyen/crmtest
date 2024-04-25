@@ -6,6 +6,7 @@
       label="Создать"
       size="14px"
       class="q-mb-md"
+      @click="createEntity"
   >
     <q-list>
       <q-item clickable v-close-popup>
@@ -27,7 +28,9 @@
 </template>
 
 <script setup>
-
+function() {
+  createEntity
+}
 </script>
 
 <style lang="scss" scoped>

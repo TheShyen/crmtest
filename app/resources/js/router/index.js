@@ -1,12 +1,10 @@
-import { createMemoryHistory, createRouter } from "vue-router";
-import CrmPage from "../modules/Crm/pages/CrmPage.vue";
-
+import {createRouter, createWebHistory} from "vue-router";
 import Company from "../modules/Company/routes/company.js";
+import Crm from "../modules/Crm/routes/crm.js"
 
-const routes = [{ path: "/", component: CrmPage }];
 
 export const router = createRouter({
-  history: createMemoryHistory(),
-  routes: [...Company],
+    history: createWebHistory(),
+    routes: [...Company, ...Crm],
 });
 

@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh LpR fFf">
+  <q-layout view="hHr lpr fFf">
     <CommonHeader @toggle-sidebar="handleSidebarToggle"/>
     <CommonSidebar :isSidebarOpen="isSidebarOpen"/>
     <q-page-container>
