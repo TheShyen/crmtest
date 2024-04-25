@@ -1,12 +1,17 @@
 export default [
   {
-    path: "/company/structure",
-    name: "structure",
-    component: () => import("../pages/Structure.vue"),
+    path: "/company",
+    component: () => import("../pages/Company.vue"),
+    children: [
+      {
+        path: "users",
+        component: () => import("../pages/Users.vue"),
+      },
+      {
+        path: "structure",
+        component: () => import("../pages/Structure.vue"),
+      },
+    ],
   },
-  {
-    path: "/company/users",
-    name: "users",
-    component: () => import("../pages/Users.vue"),
-  },
+  {},
 ];

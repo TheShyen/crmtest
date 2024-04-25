@@ -1,13 +1,12 @@
-<
 <template>
   <q-btn
+    @click="$emit('onButtonClick', $event, id)"
     :round="mini ? true : false"
     :size="mini ? '8px' : '14px'"
     :color="color"
     ><slot></slot
   ></q-btn>
 </template>
->
 
 <script setup>
 import { defineProps } from "vue";
