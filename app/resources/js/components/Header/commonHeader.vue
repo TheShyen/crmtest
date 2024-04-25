@@ -17,9 +17,9 @@
 </template>
 
 <script setup>
-import FillialsButton from "@/components/Buttons/FillialsButton.vue";
+import FillialsButton from "@/components/Buttons/fillialsButton.vue";
 import FilialsList from "@/modules/Filials/components/FilialsList.vue";
-import CommonSearch from "@/components/Search/CommonSearch.vue";
+import CommonSearch from "@/components/Search/commonSearch.vue";
 
 const emit = defineEmits(['toggleSidebar'])
 function toggleSidebar() {
