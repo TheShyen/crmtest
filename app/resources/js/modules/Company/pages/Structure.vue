@@ -21,7 +21,7 @@
 <script setup>
 import { ref } from "vue";
 
-import Filter from "@/components/Filter/filter.vue";
+import Filter from "@/components/Filter/Filter.vue";
 
 
 
