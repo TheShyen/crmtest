@@ -55,7 +55,13 @@
       </svg>
     </q-avatar>
 
-    <Input :label="'имя'" :placeholder="'введите имя'" />
+    <div>
+      <label> 
+        имя
+        <Input  :placeholder="'введите имя'" />
+      </label>
+    </div>   
+
 
     <div class="q-gutter-sm">
       <q-radio v-model="shape" val="line" label="Line" />
@@ -110,7 +116,21 @@
 
     <q-btn @click="notify" :color="'red'">Алерт</q-btn>
 
-    <q-date v-model="date" />
+    <q-date v-model="date" range ><q-input filled v-model="time" mask="time" :rules="['time']">
+        <template v-slot:append>
+          <q-icon name="access_time" class="cursor-pointer">
+            <q-popup-proxy cover transition-show="scale" transition-hide="scale">
+              <q-time v-model="time">
+                <div class="row items-center justify-end">
+                  <q-btn v-close-popup label="Close" color="primary" flat />
+                </div>
+              </q-time>
+            </q-popup-proxy>
+          </q-icon>
+        </template>
+      </q-input>
+
+      </q-date>
 
     <q-spinner color="primary" size="3em" />
 
@@ -137,6 +157,34 @@
     </q-dialog>
 
     <q-chip removable color="teal" text-color="white">Фильтр</q-chip>
+
+    <div class="q-pa-md" style="max-width: 300px">
+    <q-input filled v-model="date">
+      <template v-slot:prepend>
+        <q-icon name="event" class="cursor-pointer">
+          <q-popup-proxy cover transition-show="scale" transition-hide="scale">
+            <q-date v-model="date" mask="YYYY-MM-DD HH:mm">
+              <div class="row items-center justify-end">
+                <q-btn v-close-popup label="Close" color="primary" flat />
+              </div>
+            </q-date>
+          </q-popup-proxy>
+        </q-icon>
+      </template>
+
+      <template v-slot:append>
+        <q-icon name="access_time" class="cursor-pointer">
+          <q-popup-proxy cover transition-show="scale" transition-hide="scale">
+            <q-time v-model="date" mask="YYYY-MM-DD HH:mm" format24h>
+              <div class="row items-center justify-end">
+                <q-btn v-close-popup label="Close" color="primary" flat />
+              </div>
+            </q-time>
+          </q-popup-proxy>
+        </q-icon>
+      </template>
+    </q-input>
+  </div>
   </div>
 </template>
 
@@ -153,6 +201,7 @@ var shape = ref("");
 var val = ref("");
 var date = ref("2024/02/01");
 var alert = ref(false);
+var time = ref('')
 
 const notify = () => {
   toast("Вам сообщение !", {

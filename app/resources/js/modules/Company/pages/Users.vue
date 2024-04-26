@@ -1,18 +1,19 @@
 <template>
   <div class="row items-center">
-    <h6 class="q-my-sm q-mr-lg">Сотрудники</h6>
-    <Search
+    <h5 class="q-my-sm q-mr-lg">Поиск сотрудника</h5>
+    <Input
       :outlined="true"
       :bg="'primary'"
       :placeholder="'Фильтр + поиск'"
-    ></Search>
+      style="width: 400px"
+    ></Input>
   </div>
 
-  <q-table :rows="rows" :columns="columns" />
+  <q-table style="border-radius: 10px" :rows="rows" :columns="columns" />
 </template>
 
 <script setup>
-import Search from "@/components/Search/commonSearch.vue";
+import Input from "@/components/Input/input.vue";
 
 const columns = [
   {

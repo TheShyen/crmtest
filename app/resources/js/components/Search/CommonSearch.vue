@@ -8,7 +8,6 @@
     :outlined="outlined"
     v-model="text"
     :placeholder="placeholder"
-    class="search"
   >
     <template v-slot:append>
       <q-icon v-if="text === ''" name="search" />

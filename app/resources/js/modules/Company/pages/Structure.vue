@@ -2,35 +2,37 @@
   <h6 class="q-my-sm">Структура компании</h6>
   <q-layout container> </q-layout>
 
-  <label
-    class="bg-primary q-field row no-wrap items-start q-field--standard q-input"
-    style="border-radius: 15px"
+  <div
+    class="q-field__inner relative-position col self-stretch"
+    style="height: 34px; border: 1px grey solid; border-radius: 5px"
   >
-    <div class="q-field__inner relative-position col self-stretch">
-      <div class="q-field__control relative-position row no-wrap">
-        <div
-          class="q-field__control-container col relative-position row no-wrap q-anchor--skip items-center"
+    <div
+      class="q-field__control relative-position row no-wrap"
+      style="height: 34px"
+    >
+      <div
+        class="q-field__control-container col relative-position row no-wrap q-anchor--skip items-center"
+        style="height: 34px"
+      >
+        <q-chip
+          removable
+          @remove="deleteChip(item.id)"
+          color="teal"
+          text-color="white"
+          v-for="item in filter.filters"
+          :id="item.id"
+          :key="item.id"
+          >{{ item.value }}</q-chip
         >
-          <q-chip
-            removable
-            @remove="deleteChip(item.id)"
-            color="teal"
-            text-color="white"
-            v-for="item in filter.filters"
-            :id="item.id"
-            :key="item.id"
-            >{{ item.value }}</q-chip
-          >
-          <input
-            v-model="search"
-            class="q-field__native q-placeholder text-white"
-            type="text"
-            placeholder="искать что-то"
-          />
-        </div>
+        <input
+          v-model="search"
+          class="text-black q-field__native q-placeholder text-white q-px-md q-py-none"
+          type="text"
+          placeholder="искать что-то"
+        />
       </div>
     </div>
-  </label>
+  </div>
 
   <Select
     :label="'фильтры'"

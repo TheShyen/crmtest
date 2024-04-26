@@ -6,6 +6,8 @@
     :label="label"
     :name="label"
     :placeholder="placeholder"
+    dense
+    class="q-pa-sm"
   />
 </template>
 
