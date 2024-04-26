@@ -1,9 +1,5 @@
 export default [
     {
-        path:"",
-        component: () => import("../pages/CrmPage.vue")
-    },
-    {
         path: "/crm",
         component: () => import("../pages/CrmPage.vue"),
         children: [

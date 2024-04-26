@@ -1,11 +1,11 @@
 <template>
+  <MainTabOnModule :tabs="crmTabs"/>
   <div class="q-ma-md">
-    <MainTabOnModule :tabs="crmTabs"/>
     <CrmLayout>
       <RouterView/>
     </CrmLayout>
-
   </div>
+
 </template>
 
 <script setup>

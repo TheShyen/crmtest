@@ -3,7 +3,7 @@
       v-model="tab"
       inline-label
       align="left"
-      class="bg-white shadow-2 q-mb-md q-pa-xs rounded-borders"
+      class="tabs shadow-2 bg-white q-ma-md q-pa-xs"
   >
     <div v-for="tab in tabs">
       <q-route-tab
@@ -43,4 +43,8 @@ const props = defineProps({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.tabs {
+  border-radius: 10px;
+}
+</style>

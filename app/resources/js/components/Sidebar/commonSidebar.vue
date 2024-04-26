@@ -2,11 +2,11 @@
   <q-drawer
     show-if-above
     :model-value="isSidebarOpen"
-    width="250"
+    :width='250'
     side="left"
     behavior="desktop"
   >
-    <q-tabs align="left" vertical>
+    <q-tabs align="left" vertical active-bg-color="grey-3">
       <q-route-tab v-for="tab in routeTabs" no-caps :to="tab.route">
         {{tab.text}}
       </q-route-tab>
@@ -22,7 +22,7 @@ const props = defineProps({
 const routeTabs = [
   {
     text: "CRM",
-    route: "/crm/lead",
+    route: "/crm",
     id: 1,
     type: "tab",
   },
