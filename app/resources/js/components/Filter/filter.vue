@@ -2,7 +2,7 @@
   <q-chip
     removable
     v-model="eclair"
-    @remove="log('Icecream')"
+    @remove="console.log('Icecream')"
     color="teal"
     text-color="white"
   >
