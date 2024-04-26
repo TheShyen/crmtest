@@ -17,8 +17,8 @@ import ViewTypeTabs from "@/components/Tabs/viewTypeTabs.vue";
 import CreateButtons from "@/components/Buttons/createButtons.vue";
 import SearchTagTabs from "@/components/Tabs/searchTagTabs.vue";
 import RightSlider from "../components/Slider/rightSlider.vue";
-import EntityCard from "../modules/Crm/components/entityCard.vue";
-import {ref} from "vue";
+
+import {ref} from "vue"
 
 const isRightSliderOpen = ref(false)
 </script>

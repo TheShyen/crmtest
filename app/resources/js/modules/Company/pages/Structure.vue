@@ -20,7 +20,7 @@
 <script setup>
 import { ref } from "vue";
 
-import Filter from "@/components/Filter/Filter.vue";
+import Filter from "@/components/Filter/filter.vue";
 
 
 const modelMultiple = ref(["Google", "Facebook", "Twitter", "Apple", "Oracle"]);
