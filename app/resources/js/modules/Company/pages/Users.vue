@@ -31,9 +31,9 @@ const columns = [
     sortable: true,
   },
   { name: "Email", label: "E-Mail", field: "Email", sortable: true },
-  { name: "carbs", label: "Carbs (g)", field: "carbs" },
-  { name: "protein", label: "Protein (g)", field: "protein" },
-  { name: "sodium", label: "Sodium (mg)", field: "sodium" },
+  { name: "workPhone", label: "Рабочий телефон", field: "workPhone" },
+  { name: "post", label: "Должность", field: "post" },
+  { name: "sodium", label: "Подразделение", field: "sodium" },
   {
     name: "calcium",
     label: "Calcium (%)",

@@ -4,6 +4,7 @@
     v-model="value"
     @update:model-value="$emit('onInputChange', $event, id)"
     :label="label"
+    :name="label"
     :placeholder="placeholder"
   />
 </template>

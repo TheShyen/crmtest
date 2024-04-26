@@ -1,12 +1,5 @@
 <template>
-  <q-btn-dropdown
-    :color="color"
-    push
-    glossy
-    no-caps
-    :label="label"
-    @click="$emit('onMainClick', $event)"
-  >
+  <q-btn-dropdown color="primary" :label="label">
     <q-list class="column"><slot></slot></q-list
   ></q-btn-dropdown>
 </template>

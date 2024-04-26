@@ -1,7 +1,8 @@
 <template>
-  <div class="q-pa-md">
-    <MainTabOnModule :tabs="tabs"></MainTabOnModule>
-    <router-view></router-view>
+  <MainTabOnModule :tabs="tabs"></MainTabOnModule>
+
+  <div class="q-px-md">
+    <router-view> </router-view>
   </div>
 </template>
 

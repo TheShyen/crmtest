@@ -2,7 +2,10 @@
   <h6 class="q-my-sm">Структура компании</h6>
   <q-layout container> </q-layout>
 
-  <label class="q-field row no-wrap items-start q-field--standard q-input">
+  <label
+    class="bg-primary q-field row no-wrap items-start q-field--standard q-input"
+    style="border-radius: 15px"
+  >
     <div class="q-field__inner relative-position col self-stretch">
       <div class="q-field__control relative-position row no-wrap">
         <div
@@ -20,8 +23,9 @@
           >
           <input
             v-model="search"
-            class="q-field__native q-placeholder"
+            class="q-field__native q-placeholder text-white"
             type="text"
+            placeholder="искать что-то"
           />
         </div>
       </div>
@@ -38,12 +42,29 @@
     <h5>{{ post.title }}</h5>
     <p>{{ post.body }}</p>
   </div>
+
+  <divisionCard
+    class="bg-grey-2"
+    :color="'grey'"
+    :name="'Стоп займ'"
+    :manager="'Валентин Петрович'"
+    :staff="[{ name: 'один' }, { name: 'два' }, { name: 'три' }]"
+  ></divisionCard>
+
+  <divisionCard
+    class="bg-yellow-2"
+    :color="'orange'"
+    :name="'Стоп займ'"
+    :manager="'Валентин Петрович'"
+    :staff="[{ name: 'один' }, { name: 'два' }, { name: 'три' }]"
+  ></divisionCard>
 </template>
 +
 <script setup>
 import { reactive, computed, ref, watch } from "vue";
 
 import Select from "@/components/Select/commonSelect.vue";
+import divisionCard from "../components/divisionCard.vue";
 
 var search = ref("");
 
@@ -92,7 +113,6 @@ const deleteChip = (id) => {
 };
 
 const addChip = (event) => {
-  console.log(event);
   filter.filters.push({ value: event, id: Date.now() });
 };
 
@@ -104,6 +124,6 @@ const filter = reactive({
 });
 
 watch(filter, (newValue) => {
-  console.log([...filter.filters.map((el) => el.value)].join(" "));
+  //console.log([...filter.filters.map((el) => el.value)].join(" "));
 });
 </script>

@@ -30,7 +30,7 @@ const routeTabs = [
   },
   {
     text: "Компания",
-    route: "/company",
+    route: "/company/structure",
     id: 2,
     type: "tab",
   },

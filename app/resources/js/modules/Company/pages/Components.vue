@@ -1,6 +1,6 @@
 <template>
   <div class="column items-start" style="gap: 10px">
-    <CommonButton :color="'primary'">Кнопка</CommonButton>
+    <CommonButton :color="'red'">Кнопка</CommonButton>
 
     <CommonButton :color="'grey'" :mini="true"
       ><svg
@@ -22,16 +22,22 @@
     <Select :options="['привет', 'пока']"></Select>
 
     <SelectButtons square :color="'secondary'" :label="'выпадающие кнопки'"
-      ><CommonButton square :color="'primary'">Кнопка</CommonButton
-      ><CommonButton square :color="'primary'">Кнопка</CommonButton
-      ><CommonButton square :color="'primary'"
+      ><CommonButton unelevated square color="'white'" text-color="black"
+        >Кнопка</CommonButton
+      ><CommonButton unelevated square color="'white'" text-color="black"
+        >Кнопка</CommonButton
+      ><CommonButton unelevated square color="'white'" text-color="black"
         >Кнопка</CommonButton
       ></SelectButtons
     >
 
     <q-avatar color="red" text-color="white"
-      ><img src="https://cdn.quasar.dev/img/avatar.png"
-    /></q-avatar>
+      ><img
+        style="position: relative"
+        src="https://cdn.quasar.dev/img/avatar.png">
+        <div class='status' :style='{background: status}'></div>
+  </img>
+  </q-avatar>
 
     <q-avatar class="bg-grey"
       ><svg
@@ -62,8 +68,13 @@
 
     <q-btn color="indigo">
       Тут подсказка
-      <q-tooltip anchor="top middle" self="bottom middle" :offset="[10, 10]">
-        <strong>Подсказка !</strong>
+      <q-tooltip
+        :delay="500"
+        anchor="top middle"
+        self="bottom middle"
+        :offset="[10, 10]"
+      >
+        <strong style="font-size: 16px">Подсказка !</strong>
       </q-tooltip>
     </q-btn>
 
@@ -72,8 +83,8 @@
         <div class="row no-wrap q-pa-md">
           <div class="column">
             <div class="text-h6 q-mb-md">Settings</div>
-            <q-toggle v-model="mobileData" label="Use Mobile Data" />
-            <q-toggle v-model="bluetooth" label="Bluetooth" />
+            <q-toggle label="Use Mobile Data" />
+            <q-toggle label="Bluetooth" />
           </div>
 
           <q-separator vertical inset class="q-mx-lg" />
@@ -119,6 +130,7 @@
         </q-card-section>
 
         <q-card-actions align="right">
+          <q-btn flat label="Decline" color="primary" v-close-popup />
           <q-btn flat label="OK" color="primary" v-close-popup />
         </q-card-actions>
       </q-card>
@@ -147,4 +159,12 @@ const notify = () => {
     autoClose: 3000,
   }); // ToastOptions
 };
+
+var status = ref("#4dff07")
 </script>
+
+<style scoped>
+.status {
+  position: absolute; width: 13px; height: 13px; border-radius: 6px ; top: 35px; right: 1px
+  }
+</style>
