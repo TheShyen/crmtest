@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import Search from "@/components/Search/CommonSearch.vue";
+import Search from "@/components/Search/commonSearch.vue";
 
 const columns = [
   {

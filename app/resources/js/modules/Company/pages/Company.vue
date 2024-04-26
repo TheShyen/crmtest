@@ -6,6 +6,6 @@
 </template>
 
 <script setup>
-import MainTabOnModule from "@/components/Tabs/MainTabOnModule.vue";
+import MainTabOnModule from "@/components/Tabs/mainTabOnModule.vue";
 import tabs from "../routes/companyTabs.js";
 </script>

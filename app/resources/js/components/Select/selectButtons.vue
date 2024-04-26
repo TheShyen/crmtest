@@ -5,7 +5,7 @@
     glossy
     no-caps
     :label="label"
-    @click="onMainClick"
+    @click="$emit('onMainClick', $event)"
   >
     <q-list class="column"><slot></slot></q-list
   ></q-btn-dropdown>

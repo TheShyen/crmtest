@@ -1,4 +1,3 @@
-
 const companyTabs = [
   {
     text: "Структура компании",
@@ -30,7 +29,7 @@ const companyTabs = [
       },
     ],
   },
+  { text: "Компоненты", route: "/company/components", id: 3, type: "tab" },
 ];
 
 export default companyTabs;
-
