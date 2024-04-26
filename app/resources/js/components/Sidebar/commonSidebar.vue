@@ -4,6 +4,7 @@
     :mini="!isSidebarOpen"
     :width='250'
     side="left"
+    style="background-color: aliceblue"
   >
     <q-tabs align="left" vertical active-bg-color="grey-3">
       <q-route-tab v-for="tab in routeTabs" no-caps :to="tab.route">
@@ -11,6 +12,8 @@
         <template v-else>
           {{ tab.text }}
         </template>
+
+
       </q-route-tab>
     </q-tabs>
   </q-drawer>
@@ -30,7 +33,7 @@ const routeTabs = [
   },
   {
     text: "Компания",
-    route: "/company",
+    route: "/company/structure",
     id: 2,
     type: "tab",
   },

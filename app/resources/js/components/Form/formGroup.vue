@@ -17,7 +17,7 @@
 
 <script setup>
 import Select from "./select.vue";
-import Input from "./input.vue";
+import Input from "./formInput.vue";
 
 defineProps(['formConfig'])
 

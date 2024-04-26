@@ -1,5 +1,5 @@
 <template>
-  <q-btn-dropdown push rounded dense no-caps flat :label="label" icon="arrow">
+  <q-btn-dropdown rounded dense no-caps flat :label="label" icon="arrow">
     <slot></slot>
   </q-btn-dropdown>
 </template>

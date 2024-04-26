@@ -1,5 +1,5 @@
 import {createRouter, createWebHistory} from "vue-router";
-import Company from "../modules/Company/routes/company.js";
+import Company from "../modules/Company/routes/Company.js";
 import Crm from "../modules/Crm/routes/crm.js"
 
 

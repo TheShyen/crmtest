@@ -23,7 +23,7 @@
 
 <script setup>
 import EntityCard from "../components/entityCard.vue";
-import Input from "../../../components/Form/input.vue";
+import Input from "../../../components/Form/formInput.vue";
 import Checkbox from "../../../components/Form/checkbox.vue";
 import {ref} from "vue";
 import Radio from "../../../components/Form/radio.vue";

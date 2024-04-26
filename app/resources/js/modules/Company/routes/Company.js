@@ -11,6 +11,10 @@ export default [
         path: "structure",
         component: () => import("../pages/Structure.vue"),
       },
+      {
+        path: "components",
+        component: () => import("../pages/Components.vue"),
+      },
     ],
   },
   {},

@@ -11,6 +11,7 @@
         v-if="tab.type === 'tab'"
         :name="tab.text"
         :label="tab.text"
+        style="text-transform: math-auto"
       >
       </q-route-tab>
 
@@ -20,6 +21,7 @@
         stretch
         flat
         :label="tab.text"
+        style="text-transform: math-auto"
       >
         <q-list>
           <q-item
